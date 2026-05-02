@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Leads{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <div>
+      <h2>Leads</h2>
+      <p class="muted">AI-extracted name/phone/interest from conversations.</p>
+    </div>
+    <div class="muted" style="font-size:13px;">Export coming next.</div>
+  </div>
+  <div class="card">
+    <div class="card__body">
+      <div class="table-wrap">
+        <div id="leads-root"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/leads_app.js' %}"></script>
+{% endblock %}
+

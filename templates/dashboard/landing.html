@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Automate Your WhatsApp Business with AI{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero__content">
+      <h1>Automate Your WhatsApp Business with AI</h1>
+      <p class="hero__subtitle muted">
+        Connect your WhatsApp Business and instantly auto-reply using FAQs + GPT, capture leads, and view conversations.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{% url 'accounts:signup' %}">Start Free Trial</a>
+        <a class="btn" href="{% url 'accounts:login' %}">Login</a>
+      </div>
+      <div class="badges">
+        <span class="badge"><span class="badge__dot"></span> Meta Cloud API webhook</span>
+        <span class="badge"><span class="badge__dot" style="background: var(--ok)"></span> Celery retries</span>
+        <span class="badge"><span class="badge__dot" style="background: var(--brand2)"></span> FAQ-first to save tokens</span>
+      </div>
+      <div class="hero__cards">
+        <div class="card card--elevated">
+          <div class="card__title">Webhook → AI → Reply</div>
+          <div class="card__body muted">Inbound messages are processed asynchronously and sent back with automatic retry on failure.</div>
+        </div>
+        <div class="card card--elevated">
+          <div class="card__title">FAQ First</div>
+          <div class="card__body muted">Match common questions first for instant answers and lower AI spend.</div>
+        </div>
+        <div class="card card--elevated">
+          <div class="card__title">Lead Capture</div>
+          <div class="card__body muted">Intent detection + structured lead extraction to convert chats into customers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

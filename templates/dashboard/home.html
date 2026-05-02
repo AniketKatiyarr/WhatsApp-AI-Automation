@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <div>
+      <h2>Dashboard</h2>
+      <p class="muted">Business: <strong>{{ request.user.business_name|default:request.user.email }}</strong></p>
+    </div>
+    <div style="display:flex; gap: 10px; flex-wrap: wrap;">
+      <a class="btn btn--sm" href="{% url 'dashboard:faqs' %}">Manage FAQs</a>
+      <a class="btn btn--sm btn--primary" href="{% url 'dashboard:leads' %}">View Leads</a>
+    </div>
+  </div>
+
+  <div class="grid grid--3">
+    <div class="stat">
+      <div class="stat__label">Total messages received</div>
+      <div class="stat__value">{{ total_messages }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">Total leads captured</div>
+      <div class="stat__value">{{ total_leads }}</div>
+    </div>
+    <div class="stat">
+      <div class="stat__label">Integrations</div>
+      <div class="stat__value small">
+        {% if request.user.whatsapp_phone_number_id and request.user.whatsapp_token %}
+          <span class="pill pill--ok">WhatsApp connected</span>
+        {% else %}
+          <span class="pill pill--warn">Not configured</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt">
+    <div class="card__title">Recent conversations</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <div id="recent-messages-root"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/dashboard_recent_messages.js' %}"></script>
+{% endblock %}
+

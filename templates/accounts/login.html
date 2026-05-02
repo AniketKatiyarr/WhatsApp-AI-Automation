@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <div class="auth">
+    <div class="card card--elevated">
+      <div class="card__body">
+        <div class="page-header" style="margin: 0 0 10px;">
+          <div>
+            <h2>Welcome back</h2>
+            <p class="muted">Sign in to manage automations, FAQs, and leads.</p>
+          </div>
+        </div>
+        <form method="post" class="form">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <label>Email</label>
+          {{ form.username }}
+          {{ form.username.errors }}
+
+          <label>Password</label>
+          {{ form.password }}
+          {{ form.password.errors }}
+
+          <button class="btn btn--primary" type="submit">Login</button>
+        </form>
+        <div class="divider"></div>
+        <p class="muted">No account? <a class="btn btn--sm" href="{% url 'accounts:signup' %}">Start Free Trial</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

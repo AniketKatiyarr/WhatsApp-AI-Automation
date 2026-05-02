@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}FAQ Management{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <div>
+      <h2>FAQ Management</h2>
+      <p class="muted">Add FAQs to enable instant answers before using AI.</p>
+    </div>
+    <div class="muted" style="font-size:13px;">Tip: write questions like customers do.</div>
+  </div>
+  <div class="card">
+    <div class="card__body">
+      <div id="faqs-root"></div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/faqs_app.js' %}"></script>
+{% endblock %}
+
