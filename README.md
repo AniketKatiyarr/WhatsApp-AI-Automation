@@ -1,5 +1,8 @@
 # WhatsApp AI Automation Platform (SaaS MVP)
 
+![Screenshot](:\Projects\Auto AI Whatsapp\static\Images\whatsapp_ai_automation.png) 
+
+
 Production-ready Django + DRF + Celery platform that connects to Meta WhatsApp Cloud API, receives inbound webhooks, processes messages with **FAQ-first + OpenAI**, captures leads, and sends replies asynchronously.
 
 ## Tech stack
